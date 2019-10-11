@@ -20,6 +20,7 @@ class RootContainer extends React.PureComponent<IProps> {
                         backgroundColor={colors.PRIMARY_BLUE}
                         barStyle="light-content"
                         animated
+                        hidden
                     />
                     <MainNavigationContainer />
                 </Root>

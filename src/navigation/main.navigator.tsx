@@ -45,6 +45,7 @@ const CryptosNavigator = createStackNavigator(
         cardStyle: {
             backgroundColor: colors.WHITE,
         },
+        headerMode: 'none'
     }
 );
 
@@ -52,11 +53,45 @@ const TabNavigator = createBottomTabNavigator({
     Cryptos: {
         screen: CryptosNavigator,
         navigationOptions: {
-            tabBarLabel: 'Cryptos',
+            tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor }: TabBarIconProps) => (
-                <Icon name="building" size={20} color={colors.CUSTOM_BLUE} />
+                <Icon name="home" size={20} color={tintColor} />
             ),
         },
+    },
+    Cryptos2: {
+        screen: CryptosNavigator,
+        navigationOptions: {
+            tabBarLabel: 'Markets',
+            tabBarIcon: ({ tintColor }: TabBarIconProps) => (
+                <Icon name="poll" size={20} color={tintColor} />
+            ),
+        },
+    },
+    Cryptos3: {
+        screen: CryptosNavigator,
+        navigationOptions: {
+            tabBarLabel: 'Trade',
+            tabBarIcon: ({ tintColor }: TabBarIconProps) => (
+                <Icon name="exchange-alt" size={20} color={tintColor} />
+            ),
+        },
+    },
+    Cryptos4: {
+        screen: CryptosNavigator,
+        navigationOptions: {
+            tabBarLabel: 'Account',
+            tabBarIcon: ({ tintColor }: TabBarIconProps) => (
+                <Icon name="user-circle" size={20} color={tintColor} />
+            ),
+        },
+    }
+}, {
+    tabBarOptions: {
+        activeTintColor: colors.CUSTOM_BLUE,
+        style: {
+            borderTopWidth: 0
+        }
     }
 });
 
