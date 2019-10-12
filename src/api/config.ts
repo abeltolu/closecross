@@ -2,12 +2,12 @@ import { stringify } from 'query-string';
 import transform from 'lodash/transform';
 import upperFirst from 'lodash/upperFirst';
 
-export const API_BASE_URL = 'https://pro.coinmarketcap.com/v1';
+export const API_BASE_URL = 'https://pro-api.coinmarketcap.com/v1';
 export const ClientID = 'crmSeries.Mobile';
 export const ClientSecret = '(Added From User Secrets)';
 export const Scope = 'crmSeriesAPI offline_access';
 export enum EndPoint {
-    cryptocurrency = '/cryptocurrency/',
+    cryptocurrency = '/cryptocurrency',
 }
 
 export enum QueryOptions {
@@ -55,7 +55,7 @@ export const getAPIURL = (
         value: any,
         key: any
     ) {
-        result[upperFirst(key)] = value;
+        result[key] = value;
     });
     const paramsString = params.length > 0 ? `/${params.join('/')}` : '';
     const queryOptionString =

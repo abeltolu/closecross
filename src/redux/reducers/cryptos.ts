@@ -17,13 +17,36 @@ export default function cryptos(
             return {
                 ...state,
                 isFetching: false,
-                currencies: action.response
+                currencies: [ ...state.currencies,...action.response],
+                start: state.start + 100
             };
         case types.GET_LATEST_LISTINGS.SUCCESS:
             return {
                 ...state,
                 isFetching: false,
                 error: action.err
+            };
+        case types.GET_HISTORICAL_QUOTES.REQUEST:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case types.GET_HISTORICAL_QUOTES.SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                historicalQuotes: action.response && action.response.quotes,
+            };
+        case types.GET_HISTORICAL_QUOTES.SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.err
+            };
+        case types.SET_CURRENT_CRYPTO_DETAILS:
+            return {
+                ...state,
+                currency: action.currency
             };
         default:
             return state;

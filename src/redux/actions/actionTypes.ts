@@ -22,3 +22,5 @@ export const IsTypeOf = (
 
 // Cryptocurrency Actions
 export const GET_LATEST_LISTINGS = createRequestTypes('GET_LATEST_LISTINGS');
+export const GET_HISTORICAL_QUOTES = createRequestTypes('GET_HISTORICAL_QUOTES');
+export const SET_CURRENT_CRYPTO_DETAILS = 'SET_CURRENT_CRYPTO_DETAILS';

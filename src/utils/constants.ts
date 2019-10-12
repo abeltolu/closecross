@@ -23,25 +23,14 @@ const colors = {
     DEEPORANGE: materialColors.deepOrange['a700'],
     BROWN: materialColors.brown['900'],
     LIGHTGREY: materialColors.grey['500'],
-    GREY: materialColors.grey['900'],
-    EXTRA_LIGHT_GREY: materialColors.grey['200'],
+    GREY: materialColors.grey['500'],
+    EXTRA_LIGHT_GREY: materialColors.grey['300'],
     BLUEGREY: materialColors.blueGrey['900'],
     WHITE: '#FFFFFF',
     BLACK: '#000000',
     CUSTOM_BLUE: '#2f8add',
     PRIMARY_BLUE: '#336699',
-    'Not Started': '#c79832',
-    'In Process': '#336699',
-    Completed: '#398a33',
-    'Not Started-bg': 'rgba(199, 152, 50, 0.1)',
-    'In Process-bg': 'rgba(51, 102, 153, 0.1)',
-    'Completed-bg': 'rgba(57, 138, 51, 0.1)',
-    High: '#b5322b',
-    Normal: '#c79832',
-    Low: '#398a33',
-    'High-bg': 'rgba(181, 50, 43, 0.1)',
-    'Normal-bg': 'rgba(199, 152, 50, 0.1)',
-    'Low-bg': 'rgba(57, 138, 51, 0.1)',
+    LIGHTBLACK: '#3c3d41'
 };
 
 const space = {

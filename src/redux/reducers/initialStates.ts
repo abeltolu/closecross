@@ -20,4 +20,6 @@ export const initialCryptoState = {
     ...initialDefaultState1,
     ...initialDefaultState2,
     currencies: [],
+    currency: {},
+    historicalQuotes: []
 };

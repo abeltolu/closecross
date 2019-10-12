@@ -9,8 +9,25 @@ export const getLatestListings = (payload: any) => {
         [], 
         {
             ...payload,
-            limit: payload && payload.pageSize ? payload.pageSize : pageSize.SMALL,
+            limit: payload && payload.limit ? payload.limit : pageSize.BIG,
         }
+    );
+    return axios
+        .get(API_URL, {})
+        .then(response => {
+            return response;
+        })
+        .catch(error => {
+            throw error.response;
+        });
+};
+
+export const getHistoricalQuotes = (payload: any) => {
+    const API_URL = getAPIURL(
+        EndPoint.cryptocurrency, 
+        ['quotes', 'historical'], 
+        [], 
+        { ...payload, }
     );
     return axios
         .get(API_URL, {})

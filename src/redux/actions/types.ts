@@ -4,6 +4,7 @@ type IActionError = {
 };
 
 type IActionCryptoRequestPayload = {
+    id?: number;
     cryptocurrency_type?: string;
     aux?: string;
     convert_id?: string;
@@ -20,4 +21,4 @@ export type IActionPayload = {
 } & IActionCryptoRequestPayload;
 
 export type IAction = IActionError &
-    IActionResponse & { payload: IActionPayload };
+    IActionResponse & { payload: IActionPayload; currency?: any; };

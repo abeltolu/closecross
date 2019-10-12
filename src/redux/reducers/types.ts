@@ -16,6 +16,8 @@ type IStoreDefaultState2 = {
 
 export type IStoreCryptoState = {
     currencies: any[];
+    currency: any;
+    historicalQuotes: any[];
 } & IStoreDefaultState1 &
     IStoreDefaultState2;
 

@@ -9,6 +9,7 @@ import { TabBarIconProps } from '@api/types';
 
 // screens
 import CryptoListings from '@screens/CryptoListings';
+import CryptoDetailsScreen from '@screens/CryptoDetailsScreen';
 
 // components
 import { FontAwesome5 as Icon } from '@expo/vector-icons';
@@ -17,6 +18,14 @@ import { FontAwesome5 as Icon } from '@expo/vector-icons';
 import { colors } from '@utils/constants';
 
 ///// Navigator Stack
+const cryptoNavigatorStack = {
+    CryptoDetails: {
+        screen: CryptoDetailsScreen,
+        navigationOptions: () => ({
+            title: 'Crypto Details',
+        }),
+    },
+};
 
 //// Navigator Containers
 const CryptosNavigator = createStackNavigator(
@@ -27,6 +36,7 @@ const CryptosNavigator = createStackNavigator(
                 title: 'Cryptos',
             }),
         },
+        ...cryptoNavigatorStack
         
     },
     {
