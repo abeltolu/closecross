@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { Content } from 'native-base';
-import { colors } from '@utils/constants';
+import { colors, fontSize } from '@utils/constants';
 import { FontAwesome5 as Icon } from '@expo/vector-icons';
 
 export const SearchContainer = styled.View`
@@ -30,7 +30,7 @@ export const HeaderLeft = styled.View`
 export const ContentView = styled(Content)`
     flex: 1;
     background-color: ${colors.WHITE};
-    padding: 20px;
+    padding-horizontal: 20px;
     display: flex;
     flex-direction: column;
 `;
@@ -41,6 +41,12 @@ export const HeaderBody = styled.View<{flexRow?: boolean; justifyCenter?: boolea
     align-items: center;
     flex-direction: ${(props) => props.flexRow ? 'row': 'column'};
     justify-content: ${(props) => props.justifyCenter ? 'center': 'flex-start'};
+`;
+
+export const CurrencyPriceChange = styled.Text<{positive?: boolean;}>`
+    font-size: ${fontSize.f10}px;
+    font-weight: 400;
+    color: ${(props:any) => props.positive ? colors.GREEN : colors.RED};
 `;
 
 export const FilterIcon = styled(Icon).attrs({

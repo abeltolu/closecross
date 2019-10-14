@@ -14,7 +14,7 @@ const colors = {
     LIGHTBLUE: materialColors.lightBlue['a700'],
     CYAN: materialColors.cyan['a700'],
     TEAL: materialColors.teal['a700'],
-    GREEN: '#398a33',
+    GREEN: '#27b77d',
     LIGHTGREEN: materialColors.lightGreen['a700'],
     LIME: materialColors.lime['a700'],
     YELLOW: materialColors.yellow['a700'],
@@ -30,7 +30,8 @@ const colors = {
     BLACK: '#000000',
     CUSTOM_BLUE: '#2f8add',
     PRIMARY_BLUE: '#336699',
-    LIGHTBLACK: '#3c3d41'
+    LIGHTBLACK: '#3c3d41',
+    CUSTOM_BLACK: '#1d343d'
 };
 
 const space = {

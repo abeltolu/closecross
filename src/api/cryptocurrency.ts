@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { EndPoint, QueryOptions, getAPIURL } from '@api/config';
+import { EndPoint, getAPIURL } from '@api/config';
 import { pageSize } from '@utils/constants';
 
 export const getLatestListings = (payload: any) => {

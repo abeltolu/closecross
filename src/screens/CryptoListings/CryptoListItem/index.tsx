@@ -10,9 +10,9 @@ import {
     CurrencySparkLine,
     CurrencyPriceContainer,
     CurrencyPrice,
-    CurrencyPriceChange
 } from './style';
 import { convertMarketCap, convertPrice, isPricePositive, covertToPercentage, getCryptoImage, getCryptoSparkLine } from '@utils/functions';
+import { CurrencyPriceChange } from '@src/components';
 type IProps = {
     currency: any;
     onPress?: () => void;

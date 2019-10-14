@@ -62,9 +62,3 @@ export const CurrencyPrice = styled.Text`
     color: ${colors.BLACK};
     margin-bottom: 5px;
 `;
-
-export const CurrencyPriceChange = styled.Text<{positive?: boolean;}>`
-    font-size: ${fontSize.f10}px;
-    font-weight: 400;
-    color: ${(props:any) => props.positive ? colors.GREEN : colors.RED};
-`;

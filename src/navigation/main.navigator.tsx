@@ -10,6 +10,9 @@ import { TabBarIconProps } from '@api/types';
 // screens
 import CryptoListings from '@screens/CryptoListings';
 import CryptoDetailsScreen from '@screens/CryptoDetailsScreen';
+import AccountScreen from '@screens/AccountScreen';
+import TradeScreen from '@screens/TradeScreen';
+import MarketsScreen from '@screens/MarketsScreen';
 
 // components
 import { FontAwesome5 as Icon } from '@expo/vector-icons';
@@ -43,7 +46,97 @@ const CryptosNavigator = createStackNavigator(
         initialRouteName: 'CryptoListings',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: colors.PRIMARY_BLUE,
+                backgroundColor: colors.GREEN,
+            },
+            headerTintColor: colors.WHITE,
+            headerTitleStyle: {
+                color: colors.WHITE,
+                fontWeight: "300",
+                fontSize: 16
+            },
+        },
+        cardStyle: {
+            backgroundColor: colors.WHITE,
+        },
+        headerMode: 'none'
+    }
+);
+
+const MarketsNavigator = createStackNavigator(
+    {
+        MarketsListing: {
+            screen: MarketsScreen,
+            navigationOptions: () => ({
+                title: 'MarketsListing',
+            }),
+        },
+        
+    },
+    {
+        initialRouteName: 'MarketsListing',
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: colors.GREEN,
+            },
+            headerTintColor: colors.WHITE,
+            headerTitleStyle: {
+                color: colors.WHITE,
+                fontWeight: "300",
+                fontSize: 16
+            },
+        },
+        cardStyle: {
+            backgroundColor: colors.WHITE,
+        },
+        headerMode: 'none'
+    }
+);
+
+const TradeNavigator = createStackNavigator(
+    {
+        TradesListing: {
+            screen: TradeScreen,
+            navigationOptions: () => ({
+                title: 'TradesListing',
+            }),
+        },
+        
+    },
+    {
+        initialRouteName: 'TradesListing',
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: colors.GREEN,
+            },
+            headerTintColor: colors.WHITE,
+            headerTitleStyle: {
+                color: colors.WHITE,
+                fontWeight: "300",
+                fontSize: 16
+            },
+        },
+        cardStyle: {
+            backgroundColor: colors.WHITE,
+        },
+        headerMode: 'none'
+    }
+);
+
+const AccountNavigator = createStackNavigator(
+    {
+        AccountProfile: {
+            screen: AccountScreen,
+            navigationOptions: () => ({
+                title: 'AccountProfile',
+            }),
+        },
+        
+    },
+    {
+        initialRouteName: 'AccountProfile',
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: colors.GREEN,
             },
             headerTintColor: colors.WHITE,
             headerTitleStyle: {
@@ -64,43 +157,43 @@ const TabNavigator = createBottomTabNavigator({
         screen: CryptosNavigator,
         navigationOptions: {
             tabBarLabel: 'Home',
-            tabBarIcon: ({ tintColor }: TabBarIconProps) => (
-                <Icon name="home" size={20} color={tintColor} />
+            tabBarIcon: ({ tintColor, focused }: TabBarIconProps) => (
+                <Icon name="home" size={20} color={focused ? colors.GREEN : tintColor} />
             ),
         },
     },
-    Cryptos2: {
-        screen: CryptosNavigator,
+    Markets: {
+        screen: MarketsNavigator,
         navigationOptions: {
             tabBarLabel: 'Markets',
-            tabBarIcon: ({ tintColor }: TabBarIconProps) => (
-                <Icon name="poll" size={20} color={tintColor} />
+            tabBarIcon: ({ tintColor, focused }: TabBarIconProps) => (
+                <Icon name="poll" size={20} color={focused ? colors.GREEN : tintColor} />
             ),
         },
     },
-    Cryptos3: {
-        screen: CryptosNavigator,
+    Trade: {
+        screen: TradeNavigator,
         navigationOptions: {
             tabBarLabel: 'Trade',
-            tabBarIcon: ({ tintColor }: TabBarIconProps) => (
-                <Icon name="exchange-alt" size={20} color={tintColor} />
+            tabBarIcon: ({ tintColor, focused }: TabBarIconProps) => (
+                <Icon name="exchange-alt" size={20} color={focused ? colors.GREEN : tintColor} />
             ),
         },
     },
-    Cryptos4: {
-        screen: CryptosNavigator,
+    Account: {
+        screen: AccountNavigator,
         navigationOptions: {
             tabBarLabel: 'Account',
-            tabBarIcon: ({ tintColor }: TabBarIconProps) => (
-                <Icon name="user-circle" size={20} color={tintColor} />
+            tabBarIcon: ({ tintColor, focused }: TabBarIconProps) => (
+                <Icon name="user-circle" size={20} color={focused ? colors.GREEN : tintColor} />
             ),
         },
     }
 }, {
     tabBarOptions: {
-        activeTintColor: colors.CUSTOM_BLUE,
+        activeTintColor: colors.CUSTOM_BLACK,
         style: {
-            borderTopWidth: 0
+            borderTopWidth: 0,
         }
     }
 });

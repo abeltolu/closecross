@@ -61,6 +61,11 @@ class CryptoListings extends React.PureComponent<IProps, IState> {
         });
         return (
             <Container>
+                {
+                    /**
+                     * Load Screen Header
+                     */
+                }
                 <ScreenHeader>
                     <SearchContainer>
                         <Item rounded style={{flex: 1}}>
@@ -72,6 +77,12 @@ class CryptoListings extends React.PureComponent<IProps, IState> {
                         </HeaderRight>
                     </SearchContainer>
                 </ScreenHeader>
+
+                {
+                    /**
+                     * Load Flat list of all cryptocurrencies
+                     */
+                }
                 <FlatList
                     keyExtractor={(_, index) => index.toString()}
                     data={filteredCurrencies}
